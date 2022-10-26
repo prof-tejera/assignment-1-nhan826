@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import DocumentationView from "./views/DocumentationView";
 import TimersView from "./views/TimersView";
+import logo from './logo.svg'
 
 const Container = styled.div`
   background: #d2d2d4;
@@ -59,7 +60,7 @@ const Nav = () => {
 const App = () => {
   return (
     <Container>
-      <Logo src="/logo.svg" alt="Logo"></Logo>
+      <Logo src= {logo} alt="Logo"></Logo>
       <Router>
         <Routes>
           <Route path="/docs" element={<DocumentationView />} />
