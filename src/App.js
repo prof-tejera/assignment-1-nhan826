@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import DocumentationView from "./views/DocumentationView";
 import TimersView from "./views/TimersView";
-// import logo from './logo.svg'
+import logo from './logo.svg'
 
 const Container = styled.div`
   background: #d2d2d4;
@@ -25,20 +25,21 @@ const NavLink = styled(Link)`
 const NavLinkContainer = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 30px;
   list-style: none;
+  display: flex;
   margin-right: 30px;
+  margin-left: 30px;
   font-family: Poppins, serif;
   font-size: 1.1rem;
 `;
 
-// const Logo = styled.img`
-//   display: block;
-//   margin-left: auto;
-//   margin-right: auto;
-//   margin-top: 20px;
-//   margin-bottom: 10px;
-// `;
+const Logo = styled.img`
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+`;
 
 const Nav = () => {
 
@@ -59,9 +60,9 @@ const Nav = () => {
 const App = () => {
   return (
     <Container>
-      {/* <Logo src= {logo} alt="Logo"></Logo> */}
       <Router>
         <Nav />
+        <Logo src= {logo} alt="Logo"></Logo>
         <Routes>
           <Route path="/docs" element={<DocumentationView />} />
           <Route path="/" element={<TimersView />} />
