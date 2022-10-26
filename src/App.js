@@ -6,22 +6,52 @@ import DocumentationView from "./views/DocumentationView";
 import TimersView from "./views/TimersView";
 
 const Container = styled.div`
-  background: #f0f6fb;
+  background: #d2d2d4;
   height: 100vh;
   overflow: auto;
 `;
 
+const NavLink = styled(Link)`
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+  &:hover {
+    opacity: 80%;
+    text-decoration: underline;
+  }
+`;
+
+const NavLinkContainer = styled.div`
+  margin-top: 5px;
+  margin-bottom: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+  font-family: Poppins, serif;
+  font-size: 1.1rem;
+`;
+
+const Logo = styled.img`
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+`;
+
 const Nav = () => {
+
   return (
     <nav>
-      <ul>
+      <NavLinkContainer>
         <li>
-          <Link to="/">Timers</Link>
+          <NavLink to="/">Timers</NavLink>
         </li>
         <li>
-          <Link to="/docs">Documentation</Link>
+          <NavLink to="/docs">Documentation</NavLink>
         </li>
-      </ul>
+      </NavLinkContainer>
     </nav>
   );
 };
@@ -29,12 +59,13 @@ const Nav = () => {
 const App = () => {
   return (
     <Container>
+      <Logo src="/logo.svg" alt="Logo"></Logo>
       <Router>
-        <Nav />
         <Routes>
           <Route path="/docs" element={<DocumentationView />} />
           <Route path="/" element={<TimersView />} />
         </Routes>
+        <Nav />
       </Router>
     </Container>
   );
